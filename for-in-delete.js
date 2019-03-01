@@ -40,7 +40,12 @@
 */
 
 function showValues( obj ) {
-  //Code Here
+  let nowArray = [];
+  for (let i in obj) {
+    nowArray.push(obj[i]);
+  }
+  nowArray = nowArray.join('');
+  return nowArray;
 }
 
 
@@ -53,7 +58,14 @@ function showValues( obj ) {
   Return the updated object.
 */
 
-//Code Here
+const greaterThan10 = (obj) => {
+  for (let i in obj) {
+    if (obj[i] > 10) {
+      obj[i] = 0;
+    }
+  }
+  return obj;
+}
 
 
 
@@ -65,7 +77,13 @@ function showValues( obj ) {
   Return the updated object.
 */
 
-//Code Here
+const double = (obj) => {
+  for (let i in obj) {
+    obj[i] = obj[i] * 2;
+  }
+  return obj;
+}
+
 
 
 
@@ -79,7 +97,16 @@ function showValues( obj ) {
   By the end of the for in loop, you should have a sentence, return that sentence.
 */
 
-//Code Here
+const secrets = (obj) => {
+  let startsWithSh = [];
+  for (let i in obj) {
+    if (i.startsWith('sh')) {
+      startsWithSh.push(testPropName);
+    }
+  }
+  startsWithSh = startsWithSh.join('');
+  return startsWithSh;
+}
 
 
 
@@ -110,7 +137,10 @@ function showValues( obj ) {
   Delete the property password and return the object.
 */
 
-//Code Here
+const removePassword = (obj) => {
+  delete obj.password;
+  return obj;
+}
 
 
 
@@ -129,7 +159,17 @@ var deleteTheBigNumbers = {
   Write a for in loop that deletes every property from the object deleteTheBigNumbers whose value is greater than 100.
 */
 
-//Code Here
+const deleteBigNum = (obj) => {
+  for (let i in obj) {
+    if (obj[i] > 100) {
+      delete obj[i];
+    }
+  }
+  return obj;
+}
+
+deleteBigNum(deleteTheBigNumbers);
+
 
 
 
@@ -142,7 +182,14 @@ var deleteTheBigNumbers = {
   Return the updated object.
 */
 
-//Code Here
+const startsWithK = (obj) => {
+  for (let i in obj) {
+    if (i.startsWith('k')) {
+      delete obj[i];
+    }
+  }
+  return obj;
+}
 
 
 
@@ -157,6 +204,13 @@ var deleteTheBigNumbers = {
   (hint: the method includes() may be of use...)
 */
 
-//Code Here
+const hiddenTreasure = (obj) => {
+  for (let i in obj) {
+    if (!obj[i].includes('treasure')){
+      delete obj[i]
+    }
+  }
+  return obj
+}
 
 
